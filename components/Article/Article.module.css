@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.post {
+    width: 95vw;
+    /* margin-bottom: 25px; */
+    padding-bottom: 5vh;
+    border-bottom: 1px solid black;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post h1 {
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer; 
+}
+
+.post p {
+    text-align: center;
+}
+
+
+@media (min-width: 600px) {
+    .post {
+        width: 66%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .post {
+        width: 50%;
+    }
+}
