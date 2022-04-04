@@ -2,12 +2,16 @@ import { Toolbar } from '../../components/Toolbar/Toolbar';
 import { Article } from '../../components/Article/Article';
 import styles from '../../styles/Feed.module.css';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export const Feed = ({ pageNumber, articles }) => {
   // console.log(pageNumber, articles);
   const router = useRouter();
   return (
     <>
+      <Head>
+        <title>News App - Feed</title>
+      </Head>
       <Toolbar />
       <div>
         {articles.map((e, index) => (
@@ -23,7 +27,7 @@ export const Feed = ({ pageNumber, articles }) => {
               }
             }}
             className={pageNumber === 1 ? styles.disabled : styles.active}
->
+          >
             Previous Page
           </div>
           <div>#{pageNumber}</div>
@@ -35,7 +39,8 @@ export const Feed = ({ pageNumber, articles }) => {
                   .then(() => window.scrollTo(0, 0));
               }
             }}
-            className={pageNumber === 8 ? styles.disabled : styles.active}>
+            className={pageNumber === 8 ? styles.disabled : styles.active}
+          >
             Next Page
           </div>
         </div>
